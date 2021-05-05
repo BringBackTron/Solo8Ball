@@ -1,0 +1,19 @@
+{
+  "name": "greenluc/SDEV328inclass/HardwareTalk",
+  "authors": [
+    {
+      "name": "Jake Antonio",
+      "email": "jantonio@mail.greenriver.edu"
+    },
+    {
+      "name": "George McMullen",
+      "email": "gmcmullen@mail.greenriver.edu"
+    }
+  ],
+  "require": {
+    "bcosca/fatfree-core": "dev-master"
+  },
+  "autoload": {
+    "classmap": ["model/", "controllers/", "classes/"]
+  }
+}
