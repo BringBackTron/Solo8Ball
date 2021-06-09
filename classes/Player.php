@@ -11,7 +11,7 @@ class Player {
      * @param $_totalGames
      * @param $_totalTime
      */
-    public function __construct($_userID, $_totalGames, $_totalTime)
+    public function __construct($_userID = 0, $_totalGames=0, $_totalTime=0)
     {
         $this->_userID = $_userID;
         $this->_totalGames = $_totalGames;
