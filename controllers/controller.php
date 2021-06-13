@@ -24,6 +24,7 @@ class Controller
     {
         //Display the home page
         $view = new Template();
+        echo $view->render('views/navbar.html');
         echo $view->render('views/home.html');
     }
 
@@ -31,6 +32,8 @@ class Controller
     {
         //display game page
         $view = new Template();
+        //include("views/navbar.html");
+        echo $view->render('views/navbar.html');
         echo $view->render('views/game.html');
     }
 
@@ -38,6 +41,8 @@ class Controller
     {
         //display game page
         $view = new Template();
+        //include("views/navbar.html");
+        echo $view->render('views/navbar.html');
         echo $view->render('views/about.html');
     }
 

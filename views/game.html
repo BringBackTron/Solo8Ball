@@ -2,128 +2,113 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Objectives</title>
 </head>
 <body>
-<div id="container-left">
-  <div class="pair">
-    <input class="button" id="switchCollision" type="button" value="Switch Collision Type"/>
-    <br>
-    <label class="label" id="switchCollisionLabel" for="switchCollision">Push</label>
-  </div>
-  <div class="pair">
-    <input class="button" id="toggleGravity" type="button" value="Toggle Gravity Mode"/>
-    <br>
-    <label class="label" id="toggleGravityLabel" for="toggleGravity">Off</label>
-  </div>
+<a id="start"></a>
+<div class="hero-img-game">
+    <div class="text-white responsive-font col-sm px-lg-5 px-md-4 px-2 text-center">
+        <br><br><br>
+        <br><br><br>
+        <br><br><br>
+        <br><br><br>
+
+        <div class="display-1">Game Objectives</div>
+        <div class="display-4">Step-by-step overview</div>
+        <br>
+        <a href="#step-1" class="lead text-white responsive-font bg-transparent
+        border border-white border-dark text-decoration-none px-3 justify-center">First step</a>
+    </div>
 </div>
 
-<div id="container-right">
-  Examples::
-  <input class="button" id="pushExample" type="button" value="Pushing Through Objects"/>
-  <input class="button" id="gravityExample" type="button" value="Gravity Pulling Objects"/>
-  <input class="button" id="bounceExample" type="button" value="Bouncing Objects"/> <br>
-  <div style="text-align: center;"><b>Click and Hold to Create Circles (Hold Duration = Size)</b></div>
+<hr>
+
+<a class="anchor" id="step-1"></a>
+<div class="jumbotron bg-white hero-img-game-step-one" >
+    <div class="row align-items-center h-100 hide-scroll">
+        <div class="col-6 text-light text-center offset-3">
+            <h1 class="responsive-font">Step One</h1>
+            <p class="responsive-font-sub-1">
+                When the game starts, you will rack 15 balls with the 8 ball in the center.
+<!--                Then you will break the formation by hitting the cue ball (the white ball) into it.
+                Sink the striped balls first, followed by the solid colors.
+                Sink the black 8 ball last or it is an automatic loss..-->
+            </p>
+            <img id="billiard-balls" src="images/pool-balls-312193_640.png" alt="Billiard Balls set up" loading="lazy">
+<!--            <iframe class="center" src="images/pool-balls-312193_640.png" loading="lazy"></iframe>-->
+            <br>
+            <a href="#start" class="lead text-white responsive-font bg-transparent
+        border border-white border-dark text-decoration-none px-3 justify-center">Top</a>
+            <a href="#step-2" class="lead text-white responsive-font bg-transparent
+        border border-white border-dark text-decoration-none px-3 justify-center">Next&nbsp;Step</a>
+        </div>
+    </div>
 </div>
 
-<div id="url">
-  <a href="https://github.com/MartinHeinz/physics-visual">Visit Repository at github.com/MartinHeinz/physics-visual</a>
+<hr>
+
+<a class="anchor" id="step-2"></a>
+<div class="jumbotron bg-white hero-img-game-step-one" >
+    <div class="row align-items-center h-100 hide-scroll">
+        <div class="col-6 text-light text-center offset-3">
+            <h1 class="responsive-font">Step Two</h1>
+            <p class="responsive-font-sub-1">
+<!--                When the game starts, you will rack 15 balls with the 8 ball in the center.-->
+                                Break the formation by hitting the cue ball (the white ball) into it.
+<!--                                Sink the striped balls first, followed by the solid colors.
+                                Sink the black 8 ball last or it is an automatic loss..-->
+            </p>
+
+            <iframe src="videos/Billiard-break.mp4" loading="lazy"></iframe>
+            <br>
+            <a href="#step-1" class="lead text-white responsive-font bg-transparent
+        border border-white border-dark text-decoration-none px-3 justify-center">Previous&nbsp;Step</a>
+            <a href="#step-3" class="lead text-white responsive-font bg-transparent
+        border border-white border-dark text-decoration-none px-3 justify-center">Next&nbsp;Step</a>
+        </div>
+    </div>
 </div>
-<canvas id="canvas">
-</canvas>
 
-<script>
-  (function() {
-    const canvas = document.getElementById('canvas'),
-            context = canvas.getContext('2d');
+<hr>
 
-    // resize the canvas to fill browser window dynamically
-    window.addEventListener('resize', resizeCanvas, false);
+<a class="anchor" id="step-3"></a>
+<div class="jumbotron bg-white hero-img-game-step-one" >
+    <div class="row align-items-center h-100 hide-scroll">
+        <div class="col-6 text-light text-center offset-3">
+            <h1 class="responsive-font">Step Three</h1>
+            <p class="responsive-font-sub-1">
+<!--                When the game starts, you will rack 15 balls with the 8 ball in the center.
+                                Break the formation by hitting the cue ball (the white ball) into it.-->
+                                Sink the striped balls first, followed by the solid colors.
+<!--                                Sink the black 8 ball last or it is an automatic loss..-->
+            </p>
+            <a href="#step-2" class="lead text-white responsive-font bg-transparent
+        border border-white border-dark text-decoration-none px-3 justify-center">Previous&nbsp;Step</a>
+            <a href="#step-4" class="lead text-white responsive-font bg-transparent
+        border border-white border-dark text-decoration-none px-3 justify-center">Next&nbsp;Step</a>
+        </div>
+    </div>
+</div>
 
-    function resizeCanvas() {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-    }
-    resizeCanvas();
-  })();
-</script>
-<script type="text/javascript" src="model/physics.js"></script>
-<style>
-  * {  /* to remove the top and left whitespace */
-    margin: 0;
-    padding: 0;
-  }
+<a class="anchor" id="step-4"></a>
+<div class="jumbotron bg-white hero-img-game-step-one" >
+    <div class="row align-items-center h-100">
+        <div class="col-6 text-light text-center offset-3">
+            <h1 class="responsive-font">Step Four</h1>
+            <p class="responsive-font-sub-1">
+                Sink the black 8 ball last or it is an automatic loss.
+            </p>
+            <a href="#step-2" class="lead text-white responsive-font bg-transparent
+        border border-white border-dark text-decoration-none px-3 justify-center">Previous&nbsp;Step</a>
+            <a href="#start" class="lead text-white responsive-font bg-transparent
+        border border-white border-dark text-decoration-none px-3 justify-center">Top</a>
+        </div>
+    </div>
+</div>
 
-  html, body { /* just to be sure these are full screen*/
-    width: 100%;
-    height: 100%;
-  }
 
-  canvas { /* To remove the scrollbars */
-    height: 95%;
-    width: 100vw;
-    display: block;
-  }
-
-  #container-left {
-    bottom: 0;
-    left: 0;
-    position: relative;
-    height: 5%;
-    float: left;
-  }
-
-  #url {
-    position: fixed;
-    bottom: 15px;
-    left: 15px;
-    width: 100%;
-    font-size: 18px;
-  }
-
-  #container-right {
-    bottom: 0;
-    left: 0;
-    position: relative;
-    height: 5%;
-    float: right;
-
-    font-size: 16px;
-    font-family: Arial, serif;
-  }
-
-  div.pair {
-    float:left;
-    text-align: center;
-  }
-
-  .button {
-    background-color: white;
-    color: black;
-    border: 2px solid #555555;
-    border-radius: 2px;
-    -webkit-transition-duration: 0.4s; /* Safari */
-    transition-duration: 0.4s;
-
-    padding: 12px 28px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-  }
-
-  .button:hover {
-    background-color: #555555;
-    color: white;
-  }
-
-  .label {
-    font-size: 16px;
-    pointer-events: none;
-    font-family: Arial, serif;
-  }
-
-</style>
 </body>
 </html>
