@@ -34,4 +34,11 @@ class Controller
         echo $view->render('views/game.html');
     }
 
+    function about()
+    {
+        //display game page
+        $view = new Template();
+        echo $view->render('views/about.html');
+    }
+
 }

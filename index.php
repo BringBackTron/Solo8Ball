@@ -12,6 +12,7 @@ session_start();
 
 //create an instance of the base class
 $f3 = Base::instance();
+$con = new Controller($f3); //create a controller class
 
 //set fat-free debugging
 $f3->set('DEBUG', 3);
@@ -19,8 +20,19 @@ $f3->set('DEBUG', 3);
 //Define a default route (home page)
 $f3->route('GET /', function(){
     // render home.html
-    $view = new Template();
-    echo $view->render('views/home.html');
+    $GLOBALS['con']->home();
+});
+
+//define game route
+$f3->route('GET /game', function(){
+    // render home.html
+    $GLOBALS['con']->game();
+});
+
+//define about route
+$f3->route('GET /about', function(){
+    // render home.html
+    $GLOBALS['con']->about();
 });
 
 //run fat free
