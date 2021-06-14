@@ -81,7 +81,20 @@ class DataLayerBall
         //2. Prepare the statement
         $statement = $this->_dbh->prepare($sql);
 
-        //3. Bind the parameters
+        //4. Execute the query
+        $statement->execute();
+
+        //5. Process the results
+        $result = $statement->fetch(PDO::FETCH_ASSOC);
+        return $result;
+    }
+
+    function pullLeaderboardData() {
+        //1. Define the query
+        $sql = "SELECT shots, time, score, username FROM `scores`, users WHERE scores.user_id = users.user_id";
+
+        //2. Prepare the statement
+        $statement = $this->_dbh->prepare($sql);
 
         //4. Execute the query
         $statement->execute();

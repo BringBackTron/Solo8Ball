@@ -47,7 +47,7 @@ class ControllerBall
     function sim()
     {
         //instantiate class
-        $player = new EightBallPlayer(0,0,0);
+        $player = new EightBallPlayer(0, 0, 0);
         $user = $GLOBALS['dataLayer']->pullPlayerData();
         $this->_f3->set('user', $user);
 
@@ -56,28 +56,25 @@ class ControllerBall
         $player->setTotalTime($user['total_time']);
 
         //Makes fields sticky and sets default value
-        if (!empty($_POST['time'])){
-            $this->_f3->set('timeSticky',$_POST['time']);
-        }
-        else {
+        if (!empty($_POST['time'])) {
+            $this->_f3->set('timeSticky', $_POST['time']);
+        } else {
             $this->_f3->set('timeSticky', 0);
         }
-        if (!empty($_POST['shots'])){
-            $this->_f3->set('shotsSticky',$_POST['shots']);
-        }
-        else {
+        if (!empty($_POST['shots'])) {
+            $this->_f3->set('shotsSticky', $_POST['shots']);
+        } else {
             $this->_f3->set('shotsSticky', 0);
         }
-        if (!empty($_POST['score'])){
-            $this->_f3->set('scoreSticky',$_POST['score']);
-        }
-        else {
+        if (!empty($_POST['score'])) {
+            $this->_f3->set('scoreSticky', $_POST['score']);
+        } else {
             $this->_f3->set('scoreSticky', 0);
         }
 
         //send scores
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-            if (generatorValidation::validateTime($_POST['time'])){
+            if (generatorValidation::validateTime($_POST['time'])) {
                 $this->_f3->set('submit', true);
 
                 $player->setTime($_POST['time']);
@@ -87,8 +84,7 @@ class ControllerBall
                 $scoreId = $GLOBALS['dataLayer']->saveScore($player);
                 $GLOBALS['dataLayer']->updatePlayerData($player);
                 $this->_f3->set('scoreId', $scoreId);
-            }
-            else {
+            } else {
                 $this->_f3->set('error', "Submission cannot be 0");
             }
         }
@@ -99,10 +95,38 @@ class ControllerBall
         echo $view->render('views/gameSim.html');
     }
 
+    function leaderboard()
+    {
+        $tableData = $GLOBALS['dataLayer']->pullLeaderboardData();
+        echo var_dump($tableData);
+        $table = array();
+
+        foreach ($tableData as $row) {
+            $username = $row['username'];
+            $score = $row['score'];
+            $time = $row['time'];
+            $shots = $row['shots'];
+
+            $rowData = "<tr>
+                    <td>$username</td>
+                    <td>$score</td>
+                    <td>$time</td>
+                    <td>$shots</td>
+                  </tr>";
+
+            array_push($table,$rowData);
+        }
+        $this->_f3->set('table', $table);
+
+        //display leaderboard page
+        $view = new Template();
+        echo $view->render('views/navbar.html');
+        echo $view->render('views/about.html');
+    }
 
     function about()
     {
-        //display game page
+        //display about page
         $view = new Template();
         //include("views/navbar.html");
         echo $view->render('views/navbar.html');

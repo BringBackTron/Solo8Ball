@@ -37,6 +37,12 @@ $f3->route('GET /game', function(){
     $GLOBALS['con']->game();
 });
 
+//define leaderboard route
+$f3->route('GET /leaderboard', function(){
+    // render game.html
+    $GLOBALS['con']->leaderboard();
+});
+
 //define simulation route
 $f3->route('GET|POST /sim', function(){
     // render gameSim.html
