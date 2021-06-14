@@ -4,7 +4,7 @@
  * Class controller
  * @author Jean-Kenneth "Jake" Antonio
  */
-class Controller
+class ControllerBall
 {
     private $_f3; // router
 

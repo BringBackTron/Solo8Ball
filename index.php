@@ -12,7 +12,7 @@ session_start();
 
 //create an instance of the base class
 $f3 = Base::instance();
-$con = new Controller($f3); //create a controller class
+$con = new ControllerBall($f3); //create a controller class
 
 //set fat-free debugging
 $f3->set('DEBUG', 3);
