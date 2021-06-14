@@ -3,7 +3,6 @@
 class Scores {
     private $_scoreID;
     private $_userID;
-    private $_platform;
     private $_shots;
     private $_time;
     private $_overallScore; //probably going to be shots per second
@@ -12,16 +11,14 @@ class Scores {
      * Scores constructor.
      * @param $_scoreID
      * @param $_userID
-     * @param $_platform
      * @param $_shots
      * @param $_time
      * @param $_overallScore
      */
-    public function __construct($_scoreID, $_userID, $_platform, $_shots, $_time, $_overallScore)
+    public function __construct($_scoreID, $_userID, $_shots, $_time, $_overallScore)
     {
         $this->_scoreID = $_scoreID;
         $this->_userID = $_userID;
-        $this->_platform = $_platform;
         $this->_shots = $_shots;
         $this->_time = $_time;
         $this->_overallScore = $_overallScore;
@@ -43,13 +40,6 @@ class Scores {
         return $this->_userID;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getPlatform()
-    {
-        return $this->_platform;
-    }
 
     /**
      * @return mixed
@@ -74,6 +64,7 @@ class Scores {
     {
         return $this->_overallScore;
     }
+
 
 
 

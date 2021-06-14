@@ -19,10 +19,12 @@
 
         <div class="col-sm-3 text-light text-center offset-2 border rounded p-2">
             Get a randomized score!
-            <br>
-            <button type="button" class="btn btn-floating btn-lg text-white" id="btn-sim">
+            <br><br>
+            <button type="button" class="btn btn-floating btn-lg text-white border gray-btn" id="btn-sim">
                 Generate!
             </button>
+            <br>
+            <br>
 
             <form action="#" method="post" class="form-horizontal mx-3">
                 <label for="time">Time:</label>
@@ -32,7 +34,8 @@
                 <label for="score">Score</label>
                 <input type="number" class="form-control" name="score" id="score" value="{{ @scoreSticky }}" readonly>
 
-                <button type="submit" class="btn btn-floating btn-lg text-white" id="btn-submit-score">
+                <br>
+                <button type="submit" class="btn btn-floating btn-lg text-white gray-btn border" id="btn-submit-score">
                     Submit Score
                 </button>
             </form>

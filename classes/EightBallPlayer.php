@@ -1,45 +1,42 @@
 <?php
 
 class EightBallPlayer extends Player {
-    private $_overallScore;
-    private $_overallTime;
+    private $_score;
     private $_time;
     private $_shots;
 
     /**
      * EightBallPlayer constructor.
-     * @param $_overallScore
-     * @param $_overallTime
+     * @param $_score
      * @param $_time
      * @param $_shots
      */
-    public function __construct($_overallScore=0, $_overallTime=0, $_time=0, $_shots=0)
+    public function __construct($_score=0, $_time=0, $_shots=0)
     {
         parent::__construct();
-        $this->_overallScore = $_overallScore;
-        $this->_overallTime = $_overallTime;
+        $this-> _score= $_score;
         $this->_time = $_time;
         $this->_shots = $_shots;
     }
 
     /**
-     * @return mixed
+     * @return int|mixed
      */
-    public function getOverallScore()
+    public function getScore()
     {
-        return $this->_overallScore;
+        return $this->_score;
     }
 
     /**
-     * @return mixed
+     * @param int|mixed $score
      */
-    public function getOverallTime()
+    public function setScore($score): void
     {
-        return $this->_overallTime;
+        $this->_score = $score;
     }
 
     /**
-     * @return mixed
+     * @return int|mixed
      */
     public function getTime()
     {
@@ -47,14 +44,27 @@ class EightBallPlayer extends Player {
     }
 
     /**
-     * @return mixed
+     * @param int|mixed $time
+     */
+    public function setTime($time): void
+    {
+        $this->_time = $time;
+    }
+
+    /**
+     * @return int|mixed
      */
     public function getShots()
     {
         return $this->_shots;
     }
 
-
-
+    /**
+     * @param int|mixed $shots
+     */
+    public function setShots($shots): void
+    {
+        $this->_shots = $shots;
+    }
 
 }

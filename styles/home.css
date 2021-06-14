@@ -23,6 +23,10 @@ body {
     -ms-overflow-x: hidden;
 }
 
+.gray-btn {
+    background: rgba(0,0,0,.25);
+}
+
 .hero-img-home {
     background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
     url("../images/billiards1_1920.jpg");

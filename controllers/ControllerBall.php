@@ -46,18 +46,30 @@ class ControllerBall
 
     function sim()
     {
+        //instantiate EightBallPlayer class
+        $player = new EightBallPlayer(0,0,0);
 
+        //Makes fields sticky and sets default value
         if (!empty($_POST['time'])){
             $this->_f3->set('timeSticky',$_POST['time']);
+        }
+        else {
+            $this->_f3->set('timeSticky', 0);
         }
         if (!empty($_POST['shots'])){
             $this->_f3->set('shotsSticky',$_POST['shots']);
         }
+        else {
+            $this->_f3->set('shotsSticky', 0);
+        }
         if (!empty($_POST['score'])){
             $this->_f3->set('scoreSticky',$_POST['score']);
         }
+        else {
+            $this->_f3->set('scoreSticky', 0);
+        }
 
-
+        //send scores to session
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $_SESSION['time'] = $_POST['time'];
             $_SESSION['shots'] = $_POST['shots'];

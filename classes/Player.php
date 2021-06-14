@@ -18,6 +18,7 @@ class Player {
         $this->_totalTime = $_totalTime;
     }
 
+
     /**
      * @return mixed
      */
