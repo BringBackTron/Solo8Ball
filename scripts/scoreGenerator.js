@@ -29,5 +29,4 @@ function scoreGenerator() {
     time.setAttribute('value', timeSec);
     shot.setAttribute('value', shots);
     score.setAttribute('value', totalScore);
-
 }

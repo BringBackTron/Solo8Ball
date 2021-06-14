@@ -35,9 +35,15 @@
                 <input type="number" class="form-control" name="score" id="score" value="{{ @scoreSticky }}" readonly>
 
                 <br>
-                <button type="submit" class="btn btn-floating btn-lg text-white gray-btn border" id="btn-submit-score">
-                    Submit Score
-                </button>
+                <check if="{{ isset(@submit) }}">
+                    <p class="h-5">Score submitted!</p>
+                </check>
+
+                <check if="{{ !isset(@submit) }}">
+                    <button type="submit" class="btn btn-floating btn-lg text-white gray-btn border" id="btn-submit-score">
+                        Submit Score
+                    </button>
+                </check>
             </form>
 
 

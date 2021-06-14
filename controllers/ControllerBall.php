@@ -71,6 +71,8 @@ class ControllerBall
 
         //send scores to session
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            $this->_f3->set('submit', true);
+
             $_SESSION['time'] = $_POST['time'];
             $_SESSION['shots'] = $_POST['shots'];
             $_SESSION['score'] = $_POST['score'];
