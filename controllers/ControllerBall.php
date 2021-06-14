@@ -85,6 +85,7 @@ class ControllerBall
                 $player->setScore($_POST['score']);
 
                 $scoreId = $GLOBALS['dataLayer']->saveScore($player);
+                $this->_f3->set('scoreId', $scoreId);
             }
             else {
                 $this->_f3->set('error', "Submission cannot be 0");

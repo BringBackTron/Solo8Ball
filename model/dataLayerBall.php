@@ -33,7 +33,29 @@ class DataLayerBall
         }
     }
 
-    function saveScore() {
+    function saveScore($player) {
+        //1. Define the query
+        $sql = "INSERT INTO scores (user_id, shots, time, score) 
+                VALUES (:user_id, :shots, :time, :score)";
+
+        //2. Prepare the statement
+        $statement = $this->_dbh->prepare($sql);
+
+        //3. Bind the parameters
+        $statement->bindParam(':user_id', $player->getUserID(), PDO::PARAM_INT);
+        $statement->bindParam(':shots', $player->getShots(), PDO::PARAM_INT);
+        $statement->bindParam(':time', $player->getTime(), PDO::PARAM_INT);
+        $statement->bindParam(':score', $player->getScore(), PDO::PARAM_INT);
+
+        //4. Execute the query
+        $statement->execute();
+
+        //5. Process the results
+        $id = $this->_dbh->lastInsertId();
+        return $id;
+    }
+
+    function updatePlayerData($player) {
 
     }
 
