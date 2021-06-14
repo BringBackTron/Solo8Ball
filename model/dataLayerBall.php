@@ -33,6 +33,7 @@ class DataLayerBall
         }
     }
 
+    //TODO REPLACE ALL WHERE user_ID = 1 TO LOGGED IN USER!!!
     function saveScore($player) {
         //1. Define the query
         $sql = "INSERT INTO scores (user_id, shots, time, score) 
@@ -56,7 +57,20 @@ class DataLayerBall
     }
 
     function updatePlayerData($player) {
+        //1. Define the query
+        $sql = "UPDATE users SET total_time = :newTime, total_scores = :newScores WHERE user_id = 1;";
 
+        //2. Prepare the statement
+        $statement = $this->_dbh->prepare($sql);
+
+        //3. Bind the parameters
+        $newTime = $player->updateTime($player->getTime());
+        $newScores = $player->incrementGames();
+        $statement->bindParam(':newTime', $newTime, PDO::PARAM_INT);
+        $statement->bindParam(':newScores', $newScores, PDO::PARAM_INT);
+
+        //4. Execute the query
+        $statement->execute();
     }
 
     function pullPlayerData(): array

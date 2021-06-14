@@ -18,7 +18,6 @@ class Player {
         $this->_totalTime = $_totalTime;
     }
 
-
     /**
      * @return mixed
      */
@@ -67,6 +66,21 @@ class Player {
         $this->_totalTime = $totalTime;
     }
 
+    /**
+     * @param $totalGames
+     * @return int
+     */
+    public function incrementGames() {
+        $this->_totalGames = $this->_totalGames + 1;
+        return $this->_totalGames;
+    }
 
-
+    /**
+     * @param $time
+     * @return int|mixed
+     */
+    public function updateTime($time) {
+        $this->_totalTime = $this->_totalTime + $time;
+        return $this->_totalTime;
+    }
 }
