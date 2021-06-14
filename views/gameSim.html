@@ -25,19 +25,16 @@
 
             <form action="#" method="post" class="form-horizontal mx-3">
                 <label for="time">Time:</label>
-                <input type="number" class="form-control" name="time" id="time" value="0" disabled>
+                <input type="number" class="form-control" name="time" id="time" value="{{ @timeSticky}}" readonly>
                 <label for="shots">Shots</label>
-                <input type="number" class="form-control" name="shots" id="shots" value="0" disabled>
+                <input type="number" class="form-control" name="shots" id="shots" value="{{ @shotsSticky }}" readonly>
                 <label for="score">Score</label>
-                <input type="number" class="form-control" name="score" id="score" value="0" disabled>
+                <input type="number" class="form-control" name="score" id="score" value="{{ @scoreSticky }}" readonly>
 
                 <button type="submit" class="btn btn-floating btn-lg text-white" id="btn-submit-score">
                     Submit Score
                 </button>
             </form>
-
-
-
 
         </div>
 

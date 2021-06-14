@@ -38,9 +38,21 @@ class Controller
 
     function sim()
     {
+        if (!empty($_POST['time'])){
+            $this->_f3->set('timeSticky',$_POST['time']);
+        }
+        if (!empty($_POST['shots'])){
+            $this->_f3->set('shotsSticky',$_POST['shots']);
+        }
+        if (!empty($_POST['score'])){
+            $this->_f3->set('scoreSticky',$_POST['score']);
+        }
+
+
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-
-
+            $_SESSION['time'] = $_POST['time'];
+            $_SESSION['shots'] = $_POST['shots'];
+            $_SESSION['score'] = $_POST['score'];
         }
 
         //display game page
