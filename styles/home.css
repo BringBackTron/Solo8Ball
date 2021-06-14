@@ -94,6 +94,23 @@ body {
     overflow-y: hidden;
 }
 
+.hero-img-sim {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url("../images/billiards3_1920.jpg");
+
+    /* Set a specific height */
+    min-height: 100%;
+    height: 100vh !important;
+
+    /* Position and center the image to scale on all screens */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+
+    overflow-y: hidden;
+}
+
 .hide-scroll {
     overflow: hidden;
 }

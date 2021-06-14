@@ -29,6 +29,12 @@ $f3->route('GET /game', function(){
     $GLOBALS['con']->game();
 });
 
+//define simulation route
+$f3->route('GET /sim', function(){
+    // render home.html
+    $GLOBALS['con']->sim();
+});
+
 //define about route
 $f3->route('GET /about', function(){
     // render home.html

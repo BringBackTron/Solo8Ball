@@ -32,10 +32,18 @@ class Controller
     {
         //display game page
         $view = new Template();
-        //include("views/navbar.html");
         echo $view->render('views/navbar.html');
         echo $view->render('views/game.html');
     }
+
+    function sim()
+    {
+        //display game page
+        $view = new Template();
+        echo $view->render('views/navbar.html');
+        echo $view->render('views/gameSim.html');
+    }
+
 
     function about()
     {
