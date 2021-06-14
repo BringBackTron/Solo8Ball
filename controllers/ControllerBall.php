@@ -36,6 +36,14 @@ class ControllerBall
         echo $view->render('views/game.html');
     }
 
+    function login()
+    {
+        //display game page
+        $view = new Template();
+        echo $view->render('views/navbar.html');
+        echo $view->render('views/login.html');
+    }
+
     function sim()
     {
 

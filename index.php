@@ -23,6 +23,12 @@ $f3->route('GET /', function(){
     $GLOBALS['con']->home();
 });
 
+//define simulation route
+$f3->route('GET|POST /login', function(){
+    // render gameSim.html
+    $GLOBALS['con']->login();
+});
+
 //define game route
 $f3->route('GET /game', function(){
     // render game.html
