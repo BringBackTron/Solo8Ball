@@ -38,6 +38,7 @@ class ControllerBall
 
     function sim()
     {
+
         if (!empty($_POST['time'])){
             $this->_f3->set('timeSticky',$_POST['time']);
         }
