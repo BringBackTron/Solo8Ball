@@ -17,7 +17,9 @@
 
 .login-form {
     left: 50%;
-    top: 30%;
     position: absolute;
     transform: translate(-50%, -50%);
+    border-style: solid;
+    border-color: black;
+    padding: 220px 100px 0px 100px;
 }
