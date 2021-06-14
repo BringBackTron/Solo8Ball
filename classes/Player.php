@@ -28,7 +28,15 @@ class Player {
     }
 
     /**
-     * @return mixed
+     * @param int|mixed $userID
+     */
+    public function setUserID($userID): void
+    {
+        $this->_userID = $userID;
+    }
+
+    /**
+     * @return int|mixed
      */
     public function getTotalGames()
     {
@@ -36,20 +44,29 @@ class Player {
     }
 
     /**
-     * @return mixed
+     * @param int|mixed $totalGames
+     */
+    public function setTotalGames($totalGames): void
+    {
+        $this->_totalGames = $totalGames;
+    }
+
+    /**
+     * @return int|mixed
      */
     public function getTotalTime()
     {
         return $this->_totalTime;
     }
 
-    public function incrementGames() {
-        $this->_totalGames++;
+    /**
+     * @param int|mixed $totalTime
+     */
+    public function setTotalTime($totalTime): void
+    {
+        $this->_totalTime = $totalTime;
     }
 
-    public function addTotalTime($OverallTime) {
-        $this->_totalTime =+ $OverallTime;
-    }
 
 
 }

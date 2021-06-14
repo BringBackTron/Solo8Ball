@@ -6,12 +6,14 @@ error_reporting(E_ALL);
 
 //require autoload file
 require_once("vendor/autoload.php");
+require ('/home/jantonio/config.php');
 
 // Start a session
 session_start();
 
 //create an instance of the base class
 $f3 = Base::instance();
+$dataLayer = new DataLayerBall();
 $con = new ControllerBall($f3); //create a controller class
 
 //set fat-free debugging

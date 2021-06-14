@@ -45,15 +45,23 @@
                     </button>
                 </check>
             </form>
-
-
         </div>
 
         <div class="col-sm-3 text-light text-center offset-2 border rounded p-2">
-            Click here for what is happening in the background
-            <button type="button" class="btn text-white btn-floating btn-lg" id="btn-about">
-                About page
-            </button>
+            <p class="h-5">Submitted Score:</p>
+            <check if="{{ isset(@submit) }}">
+                <p>Time: {{ @timeSticky }}</p>
+                <p>Shots: {{ @shotsSticky }}</p>
+                <p>Score: {{ @scoreSticky }}</p>
+
+                <p>User ID: {{ @user['user_ID'] }}</p>
+                <p>Total Games: {{ @user['total_scores'] }}</p>
+                <p>Total Time: {{ @user['total_time'] }}</p>
+            </check>
+
+            <check if="{{ !isset(@submit) }}">
+                <p class="text-danger">{{ @error }}</p>
+            </check>
         </div>
     </div>
 

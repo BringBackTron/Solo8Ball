@@ -7,7 +7,7 @@
 //Require the config file
 require_once($_SERVER['DOCUMENT_ROOT'].'/../config.php');
 
-class DataLayer
+class DataLayerBall
 {
     // Add a field for the database object
     /**
@@ -36,5 +36,26 @@ class DataLayer
     function saveScore() {
 
     }
+
+    function pullPlayerData(): array
+    {
+        //1. Define the query
+        $sql = "SELECT user_ID, total_scores, total_time FROM users where user_ID = 1";
+
+        //2. Prepare the statement
+        $statement = $this->_dbh->prepare($sql);
+
+        //3. Bind the parameters
+
+        //4. Execute the query
+        $statement->execute();
+
+        //5. Process the results
+        $result = $statement->fetch(PDO::FETCH_ASSOC);
+        return $result;
+    }
+
+
+
 
 }

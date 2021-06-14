@@ -46,8 +46,14 @@ class ControllerBall
 
     function sim()
     {
-        //instantiate EightBallPlayer class
+        //instantiate class
         $player = new EightBallPlayer(0,0,0);
+        $user = $GLOBALS['dataLayer']->pullPlayerData();
+        $this->_f3->set('user', $user);
+
+        $player->setUserID($user['user_ID']);
+        $player->setTotalGames($user['total_scores']);
+        $player->setTotalTime($user['total_time']);
 
         //Makes fields sticky and sets default value
         if (!empty($_POST['time'])){
@@ -69,13 +75,21 @@ class ControllerBall
             $this->_f3->set('scoreSticky', 0);
         }
 
-        //send scores to session
+        //send scores
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-            $this->_f3->set('submit', true);
+            if (generatorValidation::validateTime($_POST['time'])){
+                $this->_f3->set('submit', true);
 
-            $_SESSION['time'] = $_POST['time'];
-            $_SESSION['shots'] = $_POST['shots'];
-            $_SESSION['score'] = $_POST['score'];
+                $player->setTime($_POST['time']);
+                $player->setShots($_POST['shots']);
+                $player->setScore($_POST['score']);
+
+                $scoreId = $GLOBALS['dataLayer']->saveScore($player);
+            }
+            else {
+                $this->_f3->set('error', "Submission cannot be 0");
+            }
+
         }
 
         //display game page
