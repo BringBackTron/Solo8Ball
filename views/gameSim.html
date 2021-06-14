@@ -2,6 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>8ball Simulator</title>
 </head>
 <body>
@@ -9,15 +12,46 @@
 <div class="hero-img-sim">
 
     <div class="row align-items-center h-100 hide-scroll">
-        <div class="col-3 text-light text-center offset-2 border rounded p-2container">
-            Set recover
+        <div class="text-white text-center">
+            <h1>Score Generator</h1>
         </div>
 
-        <div class="col-3 text-light text-center offset-2 border rounded p-2container">
-            Set add
+        <div class="col-sm-3 text-light text-center offset-2 border rounded p-2">
+            Get a randomized score!
+            <br>
+            <button type="button" class="btn btn-floating btn-lg text-white" id="btn-sim">
+                Generate!
+            </button>
+
+            <form action="#" method="post" class="form-horizontal mx-3">
+                <label for="time">Time:</label>
+                <input type="number" class="form-control" name="time" id="time" value="0" disabled>
+                <label for="shots">Shots</label>
+                <input type="number" class="form-control" name="shots" id="shots" value="0" disabled>
+                <label for="score">Score</label>
+                <input type="number" class="form-control" name="score" id="score" value="0" disabled>
+
+                <button type="submit" class="btn btn-floating btn-lg text-white" id="btn-submit-score">
+                    Submit Score
+                </button>
+            </form>
+
+
+
+
+        </div>
+
+        <div class="col-sm-3 text-light text-center offset-2 border rounded p-2">
+            Click here for what is happening in the background
+            <button type="button" class="btn text-white btn-floating btn-lg" id="btn-about">
+                About page
+            </button>
         </div>
     </div>
 
 </div>
+
+<script src="scripts/scoreGenerator.js">
+</script>
 </body>
 </html>

@@ -38,6 +38,11 @@ class Controller
 
     function sim()
     {
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+
+
+        }
+
         //display game page
         $view = new Template();
         echo $view->render('views/navbar.html');
