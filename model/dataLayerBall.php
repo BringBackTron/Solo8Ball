@@ -116,7 +116,7 @@ class DataLayerBall
         return $result;
     }
 
-    function pullCredentials($uname): array
+    function pullCredentials($uname)
     {
         $sql = "SELECT * FROM `users` WHERE username = :username";
 

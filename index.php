@@ -6,7 +6,7 @@ error_reporting(E_ALL);
 
 //require autoload file
 require_once("vendor/autoload.php");
-require ('/home/greenluc/config.php');
+require ('/home/jantonio/config.php');
 
 // Start a session
 session_start();

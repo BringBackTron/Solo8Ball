@@ -51,6 +51,7 @@ class ControllerBall
 
         $isValiduname = false;
         $isValidpsw = false;
+        $isValidContain = false;
 
         //submit data
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -72,7 +73,11 @@ class ControllerBall
 
             }
 
-            if ($isValidpsw && $isValiduname) {
+            if ($GLOBALS['dataLayer']->pullCredentials($username) !== false) {
+                $isValidContain = true;
+            }
+
+            if ($isValidpsw && $isValiduname && $isValidContain) {
 
                 //pulled creds accept username password
                 $pulledCreds = $GLOBALS['dataLayer']->pullCredentials($username);
@@ -89,7 +94,7 @@ class ControllerBall
                     $_SESSION['loggedin'] = true;
                     $_SESSION['user_id'] = $pulledCreds['user_id'];
                     $_SESSION['username'] = $pulledCreds['username'];
-                    header("Location: /Solo8Ball");
+                    header("Location: /328/Solo8Ball");
                 }
             }
 
@@ -248,7 +253,7 @@ class ControllerBall
     {
         session_destroy();
         session_start();
-        header("Location: /Solo8Ball/");
+        header("Location: /328/Solo8Ball");
     }
 
     function buttonSubmission()
