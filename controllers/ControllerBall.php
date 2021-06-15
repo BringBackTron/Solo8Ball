@@ -38,6 +38,61 @@ class ControllerBall
 
     function login()
     {
+        //Makes fields sticky and sets default value
+        if (!empty($_POST['uname'])) {
+            $this->_f3->set('unameSticky', $_POST['uname']);
+        }
+
+        $isValiduname = false;
+        $isValidpsw = false;
+
+        //submit data
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            echo '<script>console.log("IN POST")</script>';
+
+            if(empty(trim($_POST['uname']))){
+                $this->_f3 -> set('errors["uname"]', "Username is required");
+            } else {
+                $username = trim($_POST['uname']);
+                $isValiduname = true;
+                echo '<script>console.log("Is valid name")</script>';
+            }
+
+            if(empty(trim($_POST['psw']))){
+                $this->_f3 -> set('errors["psw"]', "Password can not be empty");
+            } else {
+                $password = trim($_POST['psw']);
+                $isValidpsw = true;
+                echo '<script>console.log("Is valid pass")</script>';
+
+            }
+
+            if ($isValidpsw && $isValiduname) {
+                //pulled creds accept username password
+
+                $pulledCreds = $GLOBALS['dataLayer']->pullCredentials($username);
+                $hashedPassword = password_hash($pulledCreds['password'], PASSWORD_DEFAULT);
+
+                $isTrue = password_verify($password, $hashedPassword);
+
+
+
+                if (password_verify($password, $hashedPassword)) {
+                    $_SESSION['loggedin'] = true;
+                    $_SESSION['user_id'] = $pulledCreds['user_id'];
+                    $_SESSION['username'] = $pulledCreds['username'];
+                    echo '<script>console.log("Passwords Match, user logged in")</script>';
+                } else {
+                    echo '<script>console.log("Account with matching credentials not found")</script>';
+                }
+            }
+
+
+
+            // if pull credentials is blank
+
+
+        }
         //display game page
         $view = new Template();
         echo $view->render('views/navbar.html');
@@ -48,7 +103,7 @@ class ControllerBall
     {
         //instantiate class
         $player = new EightBallPlayer(0, 0, 0);
-        $user = $GLOBALS['dataLayer']->pullPlayerData();
+        $user = $GLOBALS['dataLayer']->pullPlayerData($_SESSION['user_id']);
         $this->_f3->set('user', $user);
 
         $player->setUserID($user['user_ID']);

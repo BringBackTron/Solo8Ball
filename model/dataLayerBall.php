@@ -58,7 +58,7 @@ class DataLayerBall
 
     function updatePlayerData($player) {
         //1. Define the query
-        $sql = "UPDATE users SET total_time = :newTime, total_scores = :newScores WHERE user_id = 1;";
+        $sql = "UPDATE users SET total_time = :newTime, total_scores = :newScores WHERE user_id = :user_id;";
 
         //2. Prepare the statement
         $statement = $this->_dbh->prepare($sql);
@@ -66,20 +66,25 @@ class DataLayerBall
         //3. Bind the parameters
         $newTime = $player->updateTime($player->getTime());
         $newScores = $player->incrementGames();
+        $userID = $player->getUserID();
         $statement->bindParam(':newTime', $newTime, PDO::PARAM_INT);
         $statement->bindParam(':newScores', $newScores, PDO::PARAM_INT);
+        $statement->bindParam(':user_id', $userID, PDO::PARAM_INT);
 
         //4. Execute the query
         $statement->execute();
     }
 
-    function pullPlayerData(): array
+    function pullPlayerData($inputID): array
     {
         //1. Define the query
-        $sql = "SELECT user_ID, total_scores, total_time FROM users where user_ID = 1";
+        $sql = "SELECT user_ID, total_scores, total_time FROM users where user_ID = :user_id";
 
         //2. Prepare the statement
         $statement = $this->_dbh->prepare($sql);
+
+        $userID = $inputID;
+        $statement->bindParam(':user_id', $userID, PDO::PARAM_INT);
 
         //4. Execute the query
         $statement->execute();
@@ -104,6 +109,24 @@ class DataLayerBall
         return $result;
     }
 
+    function pullCredentials($uname) {
+        $sql = "SELECT * FROM `users` WHERE username = :username";
+
+        //2. Prepare the statement
+        $statement = $this->_dbh->prepare($sql);
+
+        //3. Bind the parameters
+        $username = $uname;
+        $statement->bindParam(':username', $username, PDO::PARAM_STR);
+
+
+        //4. Execute the query
+        $statement->execute();
+
+        //5. Process the results
+        $result = $statement->fetch(PDO::FETCH_ASSOC);
+        return $result;
+    }
 
 
 
