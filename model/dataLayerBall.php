@@ -33,7 +33,6 @@ class DataLayerBall
         }
     }
 
-    //TODO REPLACE ALL WHERE user_ID = 1 TO LOGGED IN USER!!!
     function saveScore($player) {
         //1. Define the query
         $sql = "INSERT INTO scores (user_id, shots, time, score) 
@@ -118,7 +117,6 @@ class DataLayerBall
         //3. Bind the parameters
         $username = $uname;
         $statement->bindParam(':username', $username, PDO::PARAM_STR);
-
 
         //4. Execute the query
         $statement->execute();
