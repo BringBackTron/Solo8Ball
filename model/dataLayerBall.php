@@ -33,7 +33,8 @@ class DataLayerBall
         }
     }
 
-    function saveScore($player) {
+    function saveScore($player)
+    {
         //1. Define the query
         $sql = "INSERT INTO scores (user_id, shots, time, score) 
                 VALUES (:user_id, :shots, :time, :score)";
@@ -42,10 +43,16 @@ class DataLayerBall
         $statement = $this->_dbh->prepare($sql);
 
         //3. Bind the parameters
-        $statement->bindParam(':user_id', $player->getUserID(), PDO::PARAM_INT);
-        $statement->bindParam(':shots', $player->getShots(), PDO::PARAM_INT);
-        $statement->bindParam(':time', $player->getTime(), PDO::PARAM_INT);
-        $statement->bindParam(':score', $player->getScore(), PDO::PARAM_INT);
+        $userid = $player->getUserID();
+        $shots = $player->getShots();
+        $time = $player->getTime();
+        $score = $player->getScore();
+
+
+        $statement->bindParam(':user_id', $userid, PDO::PARAM_INT);
+        $statement->bindParam(':shots', $shots, PDO::PARAM_INT);
+        $statement->bindParam(':time', $time, PDO::PARAM_INT);
+        $statement->bindParam(':score', $score, PDO::PARAM_INT);
 
         //4. Execute the query
         $statement->execute();
@@ -93,7 +100,8 @@ class DataLayerBall
         return $result;
     }
 
-    function pullLeaderboardData() {
+    function pullLeaderboardData(): array
+    {
         //1. Define the query
         $sql = "SELECT shots, time, score, username FROM `scores`, users WHERE scores.user_id = users.user_id";
 
@@ -108,7 +116,8 @@ class DataLayerBall
         return $result;
     }
 
-    function pullCredentials($uname) {
+    function pullCredentials($uname): array
+    {
         $sql = "SELECT * FROM `users` WHERE username = :username";
 
         //2. Prepare the statement
