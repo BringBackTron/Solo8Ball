@@ -1,8 +1,12 @@
 <?php
 
+//turn on error reporting
+ini_set('display_errors', 1);
+error_reporting(E_ALL);
+
 //require autoload file
 require_once("vendor/autoload.php");
-require ('/home/jantonio/config.php');
+// require ('/home/greenluc/config.php');
 
 // Start a session
 session_start();
@@ -11,7 +15,7 @@ session_start();
 $f3 = Base::instance();
 $dataLayer = new DataLayerBall();
 $con = new ControllerBall($f3); //create a controller class
-$login = new Login($db, $f3);
+//$login = new Login($db, $f3);
 
 //Define a default route (home page)
 $f3->route('GET /', function(){

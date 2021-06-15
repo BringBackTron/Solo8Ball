@@ -22,21 +22,20 @@
         <br><br><br>
         <br><br><br>
 
-        <div class="display-4 text-center">Solo 8 Ball Login</div>
+        <div class="form-group text-center row justify-content-center">
 
-        <div class="form-group login-form text-center">
+            <form method="post" action="#" class="col-sm-3 login-form">
 
-            <form method="post" action="#">
+                <div class="display-4 text-center">Solo 8 Ball Login</div>
 
-                <label for="uname"><b>Username</b></label>
-                <input type="text" placeholder="Enter Username" name="uname" id="uname" required
-                       class="form-control" value="{{ @unameSticky }}">
+                <label for="username"><b>Username</b></label>
+                <input type="text" placeholder="Enter Username" name="username" id="username" required class="form-control">
 
-                <label for="psw"><b>Password</b></label>
-                <input type="password" placeholder="Enter Password" name="psw" id="psw" required class="form-control">
+                <label for="password"><b>Password</b></label>
+                <input type="password" placeholder="Enter Password" name="password" id="password" required class="form-control">
                 <br>
                 <button type="submit" class="btn btn-primary">Log In</button>
-
+                <br><br>
             </form>
         </div>
     </div>
