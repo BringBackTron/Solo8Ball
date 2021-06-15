@@ -17,8 +17,8 @@ function scoreGenerator() {
     let totalScore = 0;
 
     while (balls > 0) {
-        randomNum = Math.floor(Math.random() * 100 + 1)
-        if (randomNum > 50) {
+        randomNum = Math.floor(Math.random() * 10 + 1)
+        if (randomNum > 4) {
             balls -= 1;
         }
         timeSec += Math.floor(Math.random() * 25 + 5);

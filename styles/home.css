@@ -5,6 +5,10 @@ body {
     position: relative;
 }
 
+.bg-light-transparent {
+    background: rgba(255,255,255,.75);
+}
+
 .card-size {
     max-width: 75vw;
     max-height: 75vw;
@@ -79,6 +83,23 @@ body {
     position: relative;
 
     overflow: hidden;
+}
+
+.hero-img-leaderboard {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)),
+    url("../images/billiard-bright.jpg");
+
+    /* Set a specific height */
+    min-height: 100%;
+    height: 100vh !important;
+
+    /* Position and center the image to scale on all screens */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+
+    overflow-y: hidden;
 }
 
 .hero-img-about {

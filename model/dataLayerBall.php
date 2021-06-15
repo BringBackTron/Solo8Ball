@@ -100,7 +100,7 @@ class DataLayerBall
         $statement->execute();
 
         //5. Process the results
-        $result = $statement->fetch(PDO::FETCH_ASSOC);
+        $result = $statement->fetchAll(PDO::FETCH_ASSOC);
         return $result;
     }
 

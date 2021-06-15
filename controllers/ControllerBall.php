@@ -98,30 +98,12 @@ class ControllerBall
     function leaderboard()
     {
         $tableData = $GLOBALS['dataLayer']->pullLeaderboardData();
-        echo var_dump($tableData);
-        $table = array();
-
-        foreach ($tableData as $row) {
-            $username = $row['username'];
-            $score = $row['score'];
-            $time = $row['time'];
-            $shots = $row['shots'];
-
-            $rowData = "<tr>
-                    <td>$username</td>
-                    <td>$score</td>
-                    <td>$time</td>
-                    <td>$shots</td>
-                  </tr>";
-
-            array_push($table,$rowData);
-        }
-        $this->_f3->set('table', $table);
+        $this->_f3->set('table', $tableData);
 
         //display leaderboard page
         $view = new Template();
         echo $view->render('views/navbar.html');
-        echo $view->render('views/about.html');
+        echo $view->render('views/leaderboard.html');
     }
 
     function about()
