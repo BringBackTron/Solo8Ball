@@ -1,3 +1,8 @@
 $(document).ready( function () {
-    $('#leaderboard').DataTable();
+    $('#leaderboard').DataTable(
+        {
+            'order': [[1, "desc"]]
+        }
+
+    );
 } );

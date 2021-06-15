@@ -1,6 +1,6 @@
-.hero-img-home {
+.hero-img-leaderboard {
     background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
-    url("../images/billiards1_1920.jpg");
+    url("../images/billiard-bright.jpg");
 
     /* Set a specific height */
     min-height: 100%;
@@ -13,4 +13,8 @@
     position: relative;
 
     overflow-y: hidden;
+}
+
+.bg-table {
+    background-color: rgba(255,255,255,.43);
 }
