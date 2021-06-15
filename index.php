@@ -6,7 +6,7 @@ error_reporting(E_ALL);
 
 //require autoload file
 require_once("vendor/autoload.php");
-// require ('/home/greenluc/config.php');
+require ('/home/greenluc/config.php');
 
 // Start a session
 session_start();
@@ -25,11 +25,6 @@ $f3->route('GET /', function(){
 
 //define login route
 $f3->route('GET|POST /login', function(){
-    global $login;
-    if($_SERVER['REQUEST_METHOD'] == 'POST') {
-        $login->logInUser();
-    }
-
     // render gameSim.html
     $GLOBALS['con']->login();
 });
@@ -53,22 +48,8 @@ $f3->route('GET|POST /sim', function(){
 });
 
 //define about route
-$f3->route('GET /about', function(){
-    // render about.html
-    $GLOBALS['con']->about();
-});
-
-//define about route
 $f3->route('GET /logout', function(){
-
-    if (!isset($_SESSION['loggedin'])) {
-        header("location: login");
-    }
-
-    session_destroy();
-    $_SESSION = array();
-    // render debug.html
-    header("Location: /Solo8Ball/");
+    $GLOBALS['con']->logout();
 });
 
 //run fat free
