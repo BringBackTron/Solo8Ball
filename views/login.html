@@ -9,8 +9,6 @@
 
     <link rel="stylesheet" href="styles/login.css">
 
-    </script>
-
     <!--Favicon-->
     <link href="images/favicon.png" type="image/png" rel="icon">
 
@@ -24,23 +22,28 @@
 
         <div class="form-group text-center row justify-content-center">
 
-            <form method="post" action="#" class="col-sm-3 login-form">
+            <form method="post" action="#" class="col-sm-3 login-form" id="login">
 
                 <div class="display-4 text-center">Solo 8 Ball Login</div>
-
+                <br>
                 <label for="username"><b>Username</b></label>
-                <input type="text" placeholder="Enter Username" name="username" id="username" required class="form-control">
+                <br>
+                <input type="text" placeholder="Enter Username" name="username" id="username" class="form-control">
+                <span class="err" id="err-username"> * Username should not be blank </span>
+                <br>
 
                 <label for="password"><b>Password</b></label>
-                <input type="password" placeholder="Enter Password" name="password" id="password" required class="form-control">
+                <input type="password" placeholder="Enter Password" name="password" id="password" class="form-control">
+                <span class="err" id="err-password"> * Password should not be blank </span>
+                <br>
                 <br>
                 <button type="submit" class="btn btn-primary">Log In</button>
                 <br><br>
             </form>
         </div>
     </div>
-
 </div>
 
+<script src="scripts/validation.js"></script>
 </body>
 </html>

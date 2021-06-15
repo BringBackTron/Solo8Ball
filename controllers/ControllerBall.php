@@ -56,13 +56,14 @@ class ControllerBall
         //submit data
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
-            if(empty(trim($_POST['username']))){
-                $this->_f3 -> set('errors["username"]', "Username is required");
-            //} else if {
-
-            } else {
+            if(!empty(trim($_POST['username']))){
                 $username = trim($_POST['username']);
                 $isValiduname = true;
+                if ($GLOBALS['dataLayer']->pullCredentials($username) !== false) {
+                    $isValidContain = true;
+                }
+            } else {
+                $this->_f3 -> set('errors["username"]', "Username is required");
             }
 
             if(empty(trim($_POST['password']))){
@@ -70,11 +71,6 @@ class ControllerBall
             } else {
                 $password = trim($_POST['password']);
                 $isValidpsw = true;
-
-            }
-
-            if ($GLOBALS['dataLayer']->pullCredentials($username) !== false) {
-                $isValidContain = true;
             }
 
             if ($isValidpsw && $isValiduname && $isValidContain) {

@@ -1,3 +1,13 @@
+.err {
+    color: white;
+    background-color: rgba(255,0,0,.43);
+    display: none;
+}
+
+.err-show{
+    color: red;
+}
+
 .hero-img-login {
     background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
     url("../images/billiards1_1920.jpg");
