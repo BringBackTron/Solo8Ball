@@ -1,5 +1,12 @@
 <?php
 
+/**
+ * Class EightBallPlayer
+ * Represents an EighBallPlayer object with score time and shots
+ * @author Jean-Kenneth Antonio
+ * @author George Mcmullen
+ * @version 0.001
+ */
 class EightBallPlayer extends Player {
     private $_score;
     private $_time;
@@ -20,6 +27,7 @@ class EightBallPlayer extends Player {
     }
 
     /**
+     * Gets score from Eight Ball Player object
      * @return int|mixed
      */
     public function getScore()
@@ -28,6 +36,7 @@ class EightBallPlayer extends Player {
     }
 
     /**
+     * Sets score for Eight Ball Player object
      * @param int|mixed $score
      */
     public function setScore($score): void
@@ -36,6 +45,7 @@ class EightBallPlayer extends Player {
     }
 
     /**
+     * Gets time from Eight Ball Player object
      * @return int|mixed
      */
     public function getTime()
@@ -44,6 +54,7 @@ class EightBallPlayer extends Player {
     }
 
     /**
+     * Sets time for Eight Ball Player object
      * @param int|mixed $time
      */
     public function setTime($time): void
@@ -52,6 +63,7 @@ class EightBallPlayer extends Player {
     }
 
     /**
+     * Gets shots from Eight Ball Player object
      * @return int|mixed
      */
     public function getShots()
@@ -60,6 +72,7 @@ class EightBallPlayer extends Player {
     }
 
     /**
+     * Sets shots for Eight Ball Player object
      * @param int|mixed $shots
      */
     public function setShots($shots): void

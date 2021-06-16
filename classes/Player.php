@@ -1,5 +1,12 @@
 <?php
 
+/**
+ * Class Player
+ * Represents an Player object with _userID _totalGames _totalTime
+ * @author Jean-Kenneth Antonio
+ * @author George Mcmullen
+ * @version 0.001
+ */
 class Player {
     private $_userID;
     private $_totalGames;
@@ -19,6 +26,7 @@ class Player {
     }
 
     /**
+     * Gets user for player class
      * @return mixed
      */
     public function getUserID()
@@ -27,6 +35,7 @@ class Player {
     }
 
     /**
+     * Sets user for player class
      * @param int|mixed $userID
      */
     public function setUserID($userID): void
@@ -35,6 +44,7 @@ class Player {
     }
 
     /**
+     * Gets total games for player class
      * @return int|mixed
      */
     public function getTotalGames()
@@ -43,6 +53,7 @@ class Player {
     }
 
     /**
+     * Sets total games for player class
      * @param int|mixed $totalGames
      */
     public function setTotalGames($totalGames): void
@@ -51,6 +62,7 @@ class Player {
     }
 
     /**
+     * Gets totaltime for player class
      * @return int|mixed
      */
     public function getTotalTime()
@@ -59,6 +71,7 @@ class Player {
     }
 
     /**
+     * Sets total time for player class
      * @param int|mixed $totalTime
      */
     public function setTotalTime($totalTime): void
@@ -67,6 +80,7 @@ class Player {
     }
 
     /**
+     * Auto-increments counter for total games for player class
      * @param $totalGames
      * @return int
      */
@@ -76,6 +90,7 @@ class Player {
     }
 
     /**
+     * Auto-updates time for total time for player class
      * @param $time
      * @return int|mixed
      */
