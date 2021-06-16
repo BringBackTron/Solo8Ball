@@ -43,6 +43,10 @@ Solo 8 Ball, the absolute best way to play pool, share scores, and topple your f
 * Our experience is strong with troubleshooting errors and learning what happen and how to find the problem and fix it.
 * An example is troubleshooting fat-free and console.log()-ing to know if the fat-free grabbed the latest changes or if an error is still occuring.
 
+Username/passwords: (testuser, "testpassword"), (jonny, "yespapa"), (jonathan, "toothpaste")
+
+Disclaimer: Due to our pages having two views (navbar and then actual content for page), HTML validators are saying there are errors with having two <HTML> tags since it's stacking the navbar HTML ontop of the page HTML. This is by design since we didn't want to hardcode the navbar into each page
+
 ## UML/ER Class Diagram
 
 ![UML-ER-Diagram-Final](https://user-images.githubusercontent.com/20677527/122156614-2df05d00-ce1e-11eb-9723-eca28c6cd257.PNG)
