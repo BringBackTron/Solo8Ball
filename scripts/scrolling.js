@@ -1,6 +1,3 @@
-
-
-
 let arrow = document.getElementById("btn-back-to-top");
 
 window.onscroll = function () {

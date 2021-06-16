@@ -1,13 +1,9 @@
-
-
 let generate = document.getElementById("btn-sim");
 let time = document.getElementById("time");
 let shot = document.getElementById("shots");
 let score = document.getElementById("score");
 
-
 generate.addEventListener("click", scoreGenerator);
-
 
 function scoreGenerator() {
     let shots = 0;
@@ -26,6 +22,7 @@ function scoreGenerator() {
     }
 
     totalScore = Math.trunc(timeSec/shots);
+
     time.setAttribute('value', timeSec);
     shot.setAttribute('value', shots);
     score.setAttribute('value', totalScore);
