@@ -1,7 +1,11 @@
 <?php
 
-/* data-layer.php
- * Return data for the solo 8 ball
+/**
+ * Class DataLayerBall
+ * Represents an DataLayerBall object that communicates with the database
+ * @author Jean-Kenneth Antonio
+ * @author George Mcmullen
+ * @version 0.001
  */
 
 //Require the config file
@@ -134,7 +138,5 @@ class DataLayerBall
         $result = $statement->fetch(PDO::FETCH_ASSOC);
         return $result;
     }
-
-
 
 }

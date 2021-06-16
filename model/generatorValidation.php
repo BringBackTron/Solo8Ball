@@ -1,9 +1,12 @@
 <?php
 
-//turn on error reporting
-ini_set('display_errors', 1);
-error_reporting(E_ALL);
-
+/**
+ * Class generatorValidation
+ * Represents an generatorValidation object of validation functions
+ * @author Jean-Kenneth Antonio
+ * @author George Mcmullen
+ * @version 0.001
+ */
 class generatorValidation{
     static function validateTime($time): bool
     {
