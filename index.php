@@ -1,12 +1,16 @@
 <?php
 
-//turn on error reporting
-ini_set('display_errors', 1);
-error_reporting(E_ALL);
-
+/**
+ * The index.php file
+ * Redirects the user to the correct routes
+ *
+ * @author Jean-Kenneth Antonio
+ * @author George Mcmullen
+ * @version 0.001
+ */
 //require autoload file
 require_once("vendor/autoload.php");
-require ('/home/jantonio/config.php');
+require ('/home/greenluc/config.php');
 
 // Start a session
 session_start();
@@ -15,40 +19,52 @@ session_start();
 $f3 = Base::instance();
 $dataLayer = new DataLayerBall();
 $con = new ControllerBall($f3); //create a controller class
-//$login = new Login($db, $f3);
 
-//Define a default route (home page)
+  /**
+    * Define a default route (home page)
+    */
 $f3->route('GET /', function(){
-    // render home.html
+    // render home view
     $GLOBALS['con']->home();
 });
 
-//define login route
+  /**
+    * define login route
+    */
 $f3->route('GET|POST /login', function(){
-    // render gameSim.html
+    // render login view
     $GLOBALS['con']->login();
 });
 
-//define game route
+  /**
+    * define game route
+   */
 $f3->route('GET /game', function(){
-    // render game.html
+    // render game view
     $GLOBALS['con']->game();
 });
 
-//define leaderboard route
+  /**
+    * define leaderboard route
+    */
 $f3->route('GET /leaderboard', function(){
-    // render game.html
+    // render leaderboard view
     $GLOBALS['con']->leaderboard();
 });
 
-//define simulation route
+  /**
+    * define simulation route
+    */
 $f3->route('GET|POST /sim', function(){
-    // render gameSim.html
+    // render simulator view
     $GLOBALS['con']->sim();
 });
 
-//define about route
+  /**
+    * define logout protocol
+    */
 $f3->route('GET /logout', function(){
+    // executes logout protocol
     $GLOBALS['con']->logout();
 });
 
